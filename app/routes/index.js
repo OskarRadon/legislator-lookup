@@ -1,10 +1,12 @@
+import config from '../config/environment';
 import Ember from 'ember';
 
 
 export default Ember.Route.extend({
   model() {
-    var urlBills = 'http://congress.api.sunlightfoundation.com/bills?apikey=2a3b1ef2f9f5430fa83affc5c4322794';
-    var urlCommittees = 'http://congress.api.sunlightfoundation.com/committees?apikey=2a3b1ef2f9f5430fa83affc5c4322794';
+    var key = config.myApiKey;
+    var urlBills = 'http://congress.api.sunlightfoundation.com/bills?apikey=' + key;
+    var urlCommittees = 'http://congress.api.sunlightfoundation.com/committees?apikey=' + key;
 
     return Ember.RSVP.hash({
       bills: Ember.$.getJSON(urlBills).then(function(responseJSON){
@@ -12,7 +14,7 @@ export default Ember.Route.extend({
       }),
 
       committees: Ember.$.getJSON(urlCommittees).then(function(responseJSON){
-        return responseJSON.results.slice(0, 5);
+        return responseJSON.results;
       })
     });
   },
