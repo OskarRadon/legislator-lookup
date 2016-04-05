@@ -6,5 +6,11 @@
   {{/each}}
 </ul>
 
+<h3>List of comittees:</h3>
+
+{{#each model.committees as |committee|}}
+  <li>{{committee.name}}</li>
+{{/each}}
+
 <h3>Look up your local legislators:</h3>
 {{lookup-form zipLookup="zipLookup"}}
