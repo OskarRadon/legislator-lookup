@@ -1,8 +1,10 @@
+
+<h3>Recent bills:</h3>
 <ul>
-  
-  {{#each model as |bill|}}
-  <li><a href= {{bill.urls.congress}}>{{bill.official_title}}</a><br>Sponsor: {{bill.sponsor.title}} {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</li>
+  {{#each model.bills as |bill|}}
+    <li><a href= {{bill.urls.congress}}>{{bill.official_title}}</a><br>Sponsor: {{bill.sponsor.title}} {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</li>
   {{/each}}
 </ul>
 
+<h3>Look up your local legislators:</h3>
 {{lookup-form zipLookup="zipLookup"}}
