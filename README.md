@@ -1,7 +1,6 @@
 # Legislator-lookup
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+An Ember app using the Sunlight Foundation app that allows a user to search legislators in their area and shows recent bills.
 
 ## Prerequisites
 
